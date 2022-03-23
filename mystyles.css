@@ -135,3 +135,23 @@ footer a:hover {
 	font-size: 50px;
 	text-align: center;
 }
+
+#starships {
+	background-color: #f6f6f2;
+	text-align: center;
+	padding-left: 15vw;
+	padding-right: 15vw;
+	padding: 20rem;
+	display: flex;
+	justify-content: space-between;
+	margin: 40px;
+}
+
+.shipname {
+	color: black;
+}
+
+.ship {
+	/* display: flex;
+	justify-content: center; */
+}
