@@ -1,12 +1,12 @@
 import { starships } from "./starships.js";
 import { planets } from "./planets.js";
+import { films } from "./films.js";
 var compareCrew = function (a, b) {
 	return a.crew - b.crew;
 };
 starships.sort(compareCrew);
 const starshipsElement = document.querySelector("#starships");
 if (starshipsElement != null) {
-	starshipsElement.innerHTML = "";
 	starships.forEach((ship) => {
 		const div = document.createElement("div");
 		// div.innerHTML = `<div class="ship"><h1>${ship.name}</h1><p>Crew: ${ship.crew}</p></div>`;
@@ -29,7 +29,6 @@ var compareDiameter = function (a, b) {
 planets.sort(compareDiameter);
 const planetsElement = document.querySelector("#planets");
 if (planetsElement != null) {
-	planetsElement.innerHTML = "";
 	planets.forEach((planet) => {
 		const div = document.createElement("div");
 		div.setAttribute("class", "planet");
@@ -41,5 +40,26 @@ if (planetsElement != null) {
 		planetdiameter.innerHTML = `Planet Diameter:${planet.diameter}`;
 		div.appendChild(planetdiameter);
 		planetsElement.appendChild(div);
+	});
+}
+
+var compareTitle = function (a, b) {
+	return a.title - b.title;
+};
+
+films.sort(compareTitle);
+const filmsElement = document.querySelector("#films");
+if (filmsElement != null) {
+	films.forEach((film) => {
+		const div = document.createElement("div");
+		div.setAttribute("class", "film");
+		const filmname = document.createElement("h1");
+		filmname.textContent = film.title;
+		filmname.setAttribute("class", "filmname");
+		div.appendChild(filmname);
+		const filmrelease = document.createElement("p");
+		filmrelease.innerHTML = `Film Release Date:${film.release_date}`;
+		div.appendChild(filmrelease);
+		filmsElement.appendChild(div);
 	});
 }
